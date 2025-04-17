@@ -1,2 +1,74 @@
-# w3c-site-braille
-Une page qui respecte les règle du w3c, cette page met en valeur un livre en braille pour les enfants qui n'ont pas la vue
+# Le Jardin d'Arthur – Site vitrine accessible
+
+Ce projet est un site vitrine respectant les règles du W3C et les bonnes pratiques d’accessibilité numérique (RGAA). Il présente **"Le Jardin d'Arthur"**, un livre pour enfants disponible en braille, audio et version standard, conçu pour être inclusif et accessible à tous.
+
+## Fonctionnalités principales
+
+- **Accessibilité renforcée** :  
+  - Navigation clavier optimisée (lien "Aller au contenu principal", focus visible, etc.)
+  - Structure sémantique (titres, sections, listes, balises ARIA)
+  - Contrastes adaptés et mode contraste élevé via CSS
+  - Formulaire accessible (labels, champs requis, navigation aisée)
+  - Vidéo avec description, sous-titres et interprète LSF
+
+- **Présentation du livre** :  
+  - Description détaillée et illustration de la couverture
+  - Explication des apports éducatifs et du public cible
+
+- **Vidéo de démonstration** :  
+  - Présentation du livre en situation réelle avec accessibilité renforcée
+
+- **Formulaire de contact et précommande** :  
+  - Choix du format (braille, audio, standard, pack complet)
+  - Inscription à la newsletter
+
+- **Informations pratiques** :  
+  - Disponibilité, prix, contact, engagement accessibilité
+
+- **Footer** :  
+  - Navigation secondaire, réseaux sociaux, conformité RGAA
+
+## Structure du projet
+
+```
+w3c-site-braille/
+├── index.html         # Page principale du site
+├── style.css          # Feuilles de style personnalisées (accessibilité, contraste, etc.)
+├── script.js          # Script JS pour améliorer l’accessibilité (focus, aria-live, etc.)
+├── images/            # Images du site (ex : couverture du livre)
+└── README.md          # Ce fichier
+```
+
+## Technologies utilisées
+
+- **HTML5** sémantique
+- **CSS3** (avec TailwindCSS CDN pour la mise en page)
+- **JavaScript** vanilla pour l’accessibilité
+- **Font Awesome** pour les icônes
+- **Responsive design** (mobile, tablette, desktop)
+
+## Accessibilité
+
+Le site vise la conformité RGAA :
+- Navigation clavier complète
+- Contrastes respectés
+- Focus visibles et personnalisés
+- Utilisation de rôles et d’attributs ARIA
+- Vidéo accessible (sous-titres, audio description, LSF)
+- Formulaire utilisable par tous
+
+## Lancer le projet
+
+1. Clone ce dépôt ou télécharge-le.
+2. Ouvre `index.html` dans ton navigateur.
+3. Les dépendances externes (Tailwind, Font Awesome) sont chargées via CDN.
+
+## Auteur
+
+Arthur Chesse  
+arthur.chesse@ynov.com
+
+## Licence
+
+Projet réalisé dans le cadre d’un exercice pédagogique.  
+© 2025 – Tous droits réservés.
