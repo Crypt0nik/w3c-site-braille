@@ -4,28 +4,28 @@ Ce projet est un site vitrine respectant les règles du W3C et les bonnes pratiq
 
 ## Fonctionnalités principales
 
-- **Accessibilité renforcée** :  
+- **Accessibilité renforcée**  
   - Navigation clavier optimisée (lien "Aller au contenu principal", focus visible, etc.)
   - Structure sémantique (titres, sections, listes, balises ARIA)
   - Contrastes adaptés et mode contraste élevé via CSS
   - Formulaire accessible (labels, champs requis, navigation aisée)
   - Vidéo avec description, sous-titres et interprète LSF
 
-- **Présentation du livre** :  
+- **Présentation du livre**  
   - Description détaillée et illustration de la couverture
   - Explication des apports éducatifs et du public cible
 
-- **Vidéo de démonstration** :  
+- **Vidéo de démonstration**  
   - Présentation du livre en situation réelle avec accessibilité renforcée
 
-- **Formulaire de contact et précommande** :  
+- **Formulaire de contact et précommande**  
   - Choix du format (braille, audio, standard, pack complet)
   - Inscription à la newsletter
 
-- **Informations pratiques** :  
+- **Informations pratiques**  
   - Disponibilité, prix, contact, engagement accessibilité
 
-- **Footer** :  
+- **Footer**  
   - Navigation secondaire, réseaux sociaux, conformité RGAA
 
 ## Structure du projet
@@ -36,6 +36,7 @@ w3c-site-braille/
 ├── style.css          # Feuilles de style personnalisées (accessibilité, contraste, etc.)
 ├── script.js          # Script JS pour améliorer l’accessibilité (focus, aria-live, etc.)
 ├── images/            # Images du site (ex : couverture du livre)
+├── videos/            # Vidéos de démonstration accessibles
 └── README.md          # Ce fichier
 ```
 
@@ -50,12 +51,11 @@ w3c-site-braille/
 ## Accessibilité
 
 Le site vise la conformité RGAA :
-- Navigation clavier complète
-- Contrastes respectés
-- Focus visibles et personnalisés
-- Utilisation de rôles et d’attributs ARIA
+- Navigation clavier complète (lien d’accès rapide, focus visible)
+- Contrastes respectés et mode contraste élevé via CSS
+- Structure sémantique et utilisation de rôles/attributs ARIA
 - Vidéo accessible (sous-titres, audio description, LSF)
-- Formulaire utilisable par tous
+- Formulaire utilisable par tous (labels, champs requis, navigation aisée)
 
 ## Lancer le projet
 
