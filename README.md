@@ -8,7 +8,7 @@ Ce projet est un site vitrine respectant les règles du W3C et les bonnes pratiq
   - Navigation clavier optimisée (lien "Aller au contenu principal", focus visible, etc.)
   - Structure sémantique (titres, sections, listes, balises ARIA)
   - Contrastes adaptés et mode contraste élevé via CSS
-  - Formulaire accessible (labels, champs requis, navigation aisée)
+  - Formulaire accessible (labels, champs requis, navigation aisée, confirmation d'envoi accessible via popup ARIA)
   - Vidéo avec description, sous-titres et interprète LSF
 
 - **Présentation du livre**  
@@ -21,6 +21,7 @@ Ce projet est un site vitrine respectant les règles du W3C et les bonnes pratiq
 - **Formulaire de contact et précommande**  
   - Choix du format (braille, audio, standard, pack complet)
   - Inscription à la newsletter
+  - Popup de confirmation accessible avant envoi du formulaire
 
 - **Informations pratiques**  
   - Disponibilité, prix, contact, engagement accessibilité
@@ -33,6 +34,10 @@ Ce projet est un site vitrine respectant les règles du W3C et les bonnes pratiq
 ```
 w3c-site-braille/
 ├── index.html         # Page principale du site
+├── contact.html       # Formulaire de contact accessible avec popup de confirmation
+├── a-propos.html      # Présentation du projet et de l'auteur
+├── definitions.html   # Définitions autour de l'accessibilité et du braille
+├── produit.html       # Présentation détaillée du livre
 ├── style.css          # Feuilles de style personnalisées (accessibilité, contraste, etc.)
 ├── script.js          # Script JS pour améliorer l’accessibilité (focus, aria-live, etc.)
 ├── images/            # Images du site (ex : couverture du livre)
@@ -55,7 +60,7 @@ Le site vise la conformité RGAA :
 - Contrastes respectés et mode contraste élevé via CSS
 - Structure sémantique et utilisation de rôles/attributs ARIA
 - Vidéo accessible (sous-titres, audio description, LSF)
-- Formulaire utilisable par tous (labels, champs requis, navigation aisée)
+- Formulaire utilisable par tous (labels, champs requis, navigation aisée, confirmation d'envoi accessible)
 
 ## Lancer le projet
 

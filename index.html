@@ -14,27 +14,39 @@
         Aller au contenu principal
     </a>
 
-    <header class="bg-green-700 text-white">
-        <div class="container mx-auto px-4 py-6">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
-                    <h1 class="text-3xl font-bold">
-                        <span class="block">Le Jardin d'Arthur</span>
-                        <span class="text-xl font-normal block">Un livre accessible pour tous</span>
-                    </h1>
+    <header class="bg-green-700 text-white" role="banner">
+        <div class="container mx-auto px-4 py-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0 flex items-center space-x-4">
+                <img src="/images/lejardinarthur.png" alt="Logo Le Jardin d'Arthur" class="h-14 w-14 rounded-full shadow border-2 border-white bg-white" />
+                <div>
+                    <h1 class="text-3xl font-bold leading-tight">Le Jardin d'Arthur</h1>
+                    <span class="text-xl font-normal block">Un livre accessible pour tous</span>
                 </div>
-                <nav aria-label="Navigation principale">
-                    <ul class="flex space-x-6">
-                        <li><a href="#presentation" class="hover:underline focus:underline">Présentation</a></li>
-                        <li><a href="#video" class="hover:underline focus:underline">Découvrir</a></li>
-                        <li><a href="#contact" class="hover:underline focus:underline">Contact</a></li>
-                    </ul>
-                </nav>
             </div>
+            <nav aria-label="Navigation principale" role="navigation">
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="hover:underline focus:underline">Accueil</a></li>
+                    <li><a href="produit.html" class="hover:underline focus:underline">Produit</a></li>
+                    <li><a href="contact.html" class="hover:underline focus:underline">Contact</a></li>
+                    <li><a href="a-propos.html" class="hover:underline focus:underline">À propos</a></li>
+                    <li><a href="definitions.html#definitions-heading" class="hover:underline focus:underline">Définitions</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
     <main id="main-content" class="container mx-auto px-4 py-8">
+        <section id="accueil" aria-labelledby="accueil-heading" class="mb-12">
+            <div class="relative overflow-hidden rounded-2xl shadow-2xl border-2 border-green-200 bg-gradient-to-br from-green-100 via-green-50 to-white py-16 px-8 flex flex-col items-center justify-center">
+                <div class="absolute inset-0 pointer-events-none" aria-hidden="true" style="background: radial-gradient(circle at 70% 30%, rgba(34,197,94,0.12) 0%, transparent 70%);"></div>
+                <h2 id="accueil-heading" class="text-4xl md:text-5xl font-extrabold text-green-900 mb-4 text-center tracking-tight">Bienvenue sur Le Jardin d'Arthur</h2>
+                <p class="text-2xl md:text-3xl text-green-700 font-medium mb-6 text-center max-w-2xl">Un livre pour enfants accessible à tous, en braille, audio et version standard.</p>
+                <a href="#presentation" class="mt-4 inline-block bg-green-700 hover:bg-green-800 text-white font-bold py-3 px-8 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 transition text-lg" role="button">
+                    Découvrir le projet
+                </a>
+            </div>
+        </section>
+
         <section id="presentation" aria-labelledby="presentation-heading" class="mb-12">
             <h2 id="presentation-heading" class="text-2xl font-bold mb-6 text-green-800">Découvrez le Jardin d'Arthur</h2>
             
@@ -51,14 +63,14 @@
                         <p class="mb-4">"Le Jardin d'Arthur" est un conte illustré spécialement conçu pour être accessible à tous les enfants, y compris ceux en situation de handicap visuel ou auditif.</p>
                         
                         <h4 class="font-semibold mb-2 text-green-600">L'histoire</h4>
-                        <p class="mb-4">Arthur, une petite fille curieuse, découvre un jardin magique où chaque fleur raconte une histoire. À travers son aventure, elle apprend l'importance de la diversité et de l'amitié.</p>
+                        <p class="mb-4">Arthur, un petit garçon curieux, découvre un jardin magique où chaque fleur raconte une histoire. À travers son aventure, il apprend l'importance de la diversité et de l'amitié.</p>
                         
                         <h4 class="font-semibold mb-2 text-green-600">Public cible</h4>
                         <p class="mb-4">Conçu pour les enfants de 3 à 8 ans, ce livre est particulièrement adapté pour :</p>
                         <ul class="list-disc pl-6 mb-4">
-                            <li class="mb-2">Les enfants malvoyants ou non-voyants (version braille et audio)</li>
-                            <li class="mb-2">Les enfants sourds ou malentendants (sous-titres et LSF)</li>
-                            <li class="mb-2">Les enfants avec des difficultés de lecture (police adaptée)</li>
+                            <li class="mb-2">Les enfants malvoyants ou non-voyants (version <a href="definitions.html#def-braille" class="text-green-700 underline hover:text-green-900" aria-describedby="def-braille-desc">braille</a>) <span id="def-braille-desc" class="sr-only">Voir la définition de braille</span></li>
+                            <li class="mb-2">Les enfants sourds ou malentendants (<a href="definitions.html#def-lsf" class="text-green-700 underline hover:text-green-900" aria-describedby="def-lsf-desc">LSF</a>) <span id="def-lsf-desc" class="sr-only">Voir la définition de LSF</span></li>
+                            <li class="mb-2">Les enfants avec des difficultés de lecture (police adaptée, <a href="definitions.html#def-accessibilite" class="text-green-700 underline hover:text-green-900" aria-describedby="def-accessibilite-desc">accessibilité numérique</a>) <span id="def-accessibilite-desc" class="sr-only">Voir la définition de l'accessibilité numérique</span></li>
                             <li class="mb-2">Tous les enfants qui aiment les belles histoires !</li>
                         </ul>
                         
@@ -89,15 +101,26 @@
         <section id="video" aria-labelledby="video-heading" class="mb-12 bg-green-50 p-6 rounded-lg">
             <h2 id="video-heading" class="text-2xl font-bold mb-6 text-green-800">Découvrez le livre en vidéo</h2>
             
-            <div class="video-container mb-6">
-                <!-- Video with captions and audio description -->
-                <iframe width="800" height="449" src="/videos/video_braille.mp4" 
+            <div class="mb-6">
+                <div class="relative pb-[56.25%] h-0 overflow-hidden rounded-lg shadow-md">
+                    <!-- Video with captions and audio description -->
+                    <video 
+                        class="absolute top-0 left-0 w-full h-full"
+                        controls
                         aria-label="Description audio : une femme qui teste le produit en lisant en braille sur le livre"
-                        title="Démonstration du livre Le Jardin d'Arthur" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen
-                        aria-describedby="video-desc">
-                </iframe>
+                        title="Démonstration du livre Le Jardin d'Arthur"
+                        aria-describedby="video-desc"
+                    >
+                        <source src="/videos/video_braille.mp4" type="video/mp4">
+                        <track 
+        kind="subtitles" 
+        src="/Sous%20titre/Sous-titres%20Braille%20en%20fran%C3%A7ais.vtt" 
+        srclang="fr" 
+        label="Français" 
+        default>
+                        Votre navigateur ne supporte pas la vidéo HTML5.
+                    </video>
+                </div>
             </div>
             
             <div id="video-desc" class="prose max-w-none">
@@ -109,167 +132,36 @@
                     <li class="mb-2">Une interprète en Langue des Signes Française (LSF)</li>
                 </ul>
                 <p class="mt-4"><strong>Note :</strong> Cette vidéo inclut des sous-titres et une piste audio descriptive. Activez ces options dans les paramètres du lecteur vidéo si nécessaire.</p>
+
             </div>
         </section>
 
         <section id="contact" aria-labelledby="contact-heading" class="mb-12">
             <h2 id="contact-heading" class="text-2xl font-bold mb-6 text-green-800">Contact et précommande</h2>
-            
-            <div class="flex flex-col lg:flex-row gap-8">
-                <div class="lg:w-1/2">
-                    <form action="https://formspree.io/f/xdkevrzz" method="POST" class="space-y-4">
-                        <div>
-                            <label for="name" class="block mb-1 font-medium">Nom complet <span class="text-red-600">*</span></label>
-                            <input type="text" id="name" name="name" required 
-                                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                                   aria-required="true">
-                        </div>
-                        
-                        <div>
-                            <label for="email" class="block mb-1 font-medium">Adresse email <span class="text-red-600">*</span></label>
-                            <input type="email" id="email" name="email" required 
-                                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                                   aria-required="true">
-                        </div>
-                        
-                        <div>
-                            <label for="phone" class="block mb-1 font-medium">Téléphone (facultatif)</label>
-                            <input type="tel" id="phone" name="phone" 
-                                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
-                        </div>
-                        
-                        <div>
-                            <label for="message" class="block mb-1 font-medium">Votre message <span class="text-red-600">*</span></label>
-                            <textarea id="message" name="message" rows="4" required 
-                                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                                      aria-required="true"></textarea>
-                        </div>
-                        
-                        <div>
-                            <fieldset>
-                                <legend class="block mb-1 font-medium">Format souhaité <span class="text-red-600">*</span></legend>
-                                <div class="space-y-2">
-                                    <div class="flex items-center">
-                                        <input type="radio" id="format-braille" name="format" value="braille" required 
-                                               class="h-4 w-4 text-green-600 focus:ring-green-500"
-                                               aria-required="true">
-                                        <label for="format-braille" class="ml-2">Version braille</label>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <input type="radio" id="format-audio" name="format" value="audio" required 
-                                               class="h-4 w-4 text-green-600 focus:ring-green-500"
-                                               aria-required="true">
-                                        <label for="format-audio" class="ml-2">Version audio</label>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <input type="radio" id="format-standard" name="format" value="standard" required 
-                                               class="h-4 w-4 text-green-600 focus:ring-green-500"
-                                               aria-required="true">
-                                        <label for="format-standard" class="ml-2">Version standard</label>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <input type="radio" id="format-combo" name="format" value="combo" required 
-                                               class="h-4 w-4 text-green-600 focus:ring-green-500"
-                                               aria-required="true">
-                                        <label for="format-combo" class="ml-2">Pack complet (braille + audio + standard)</label>
-                                    </div>
-                                </div>
-                            </fieldset>
-                        </div>
-                        
-                        <div class="flex items-center">
-                            <input type="checkbox" id="newsletter" name="newsletter" 
-                                   class="h-4 w-4 text-green-600 focus:ring-green-500">
-                            <label for="newsletter" class="ml-2">Je souhaite recevoir des informations sur les nouveaux livres accessibles</label>
-                        </div>
-                        
-                        <button type="submit" class="bg-green-700 hover:bg-green-800 text-white font-bold py-3 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition">
-                            Envoyer ma demande
-                        </button>
-                    </form>
-                </div>
-                
-                <div class="lg:w-1/2">
-                    <div class="bg-green-100 p-6 rounded-lg h-full">
-                        <h3 class="text-xl font-semibold mb-4 text-green-700">Informations pratiques</h3>
-                        
-                        <div class="space-y-4">
-                            <div>
-                                <h4 class="font-semibold mb-1">Disponibilité</h4>
-                                <p>Le livre est disponible en précommande. Les livraisons débuteront le 17 juin 2025.</p>
-                            </div>
-                            
-                            <div>
-                                <h4 class="font-semibold mb-1">Prix</h4>
-                                <ul class="list-disc pl-6">
-                                    <li>Version standard : 14,90€</li>
-                                    <li>Version braille : 24,90€</li>
-                                    <li>Version audio : 19,90€</li>
-                                    <li>Pack complet : 49,90€</li>
-                                </ul>
-                            </div>
-                            
-                            <div>
-                                <h4 class="font-semibold mb-1">Accessibilité</h4>
-                                <p>Nous nous engageons à rendre nos produits accessibles à tous. Si vous avez des besoins spécifiques non couverts par nos formats standards, n'hésitez pas à nous en faire part.</p>
-                            </div>
-                            
-                            <div>
-                                <h4 class="font-semibold mb-1">Contact</h4>
-                                <address class="not-italic">
-                                    <p><i class="fas fa-envelope mr-2" aria-hidden="true"></i> arthur.chesse@ynov.com</p>
-                                    <p><i class="fas fa-phone mr-2" aria-hidden="true"></i> 06 xx xx xx xx</p>
-                                    <p><i class="fas fa-map-marker-alt mr-2" aria-hidden="true"></i> Sophia Ynov Campus, Valbonne 06250</p>
-                                </address>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="bg-white p-8 rounded-2xl shadow-md flex flex-col items-center">
+                <p class="text-lg mb-4">Pour toute question, demande d'information ou précommande, contactez-nous via notre page dédiée.</p>
+                <a href="contact.html" class="inline-flex items-center px-6 py-3 bg-green-700 text-white font-semibold rounded-lg shadow hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 transition text-lg" role="button">
+                    Accéder à la page contact
+                </a>
             </div>
         </section>
-    </main>
 
-    <footer class="bg-green-900 text-white py-8">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between">
-                <div class="mb-6 md:mb-0">
-                    <h2 class="text-xl font-bold mb-4">Le Jardin d'Arthur</h2>
-                    <p class="mb-2">Un livre accessible pour tous les enfants</p>
-                    <p>&copy; 2025 - Tous droits réservés</p>
+        <footer class="bg-green-800 text-white py-8 mt-12" role="contentinfo">
+            <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0 text-center md:text-left">
+                    <p class="text-base font-semibold">&copy; 2025 Le Jardin d'Arthur. Tous droits réservés.</p>
+                    <p class="text-xs text-green-200 mt-1">Site conçu dans le respect des standards W3C et de l’accessibilité numérique.</p>
                 </div>
-                
-                <div class="mb-6 md:mb-0">
-                    <h3 class="text-lg font-semibold mb-4" id="footer-nav-heading">Navigation</h3>
-                    <nav aria-labelledby="footer-nav-heading">
-                        <ul class="space-y-2">
-                            <li><a href="#presentation" class="hover:underline focus:underline">Présentation</a></li>
-                            <li><a href="#video" class="hover:underline focus:underline">Découvrir</a></li>
-                            <li><a href="#contact" class="hover:underline focus:underline">Contact</a></li>
-                            <li><a href="#" class="hover:underline focus:underline">Mentions légales</a></li>
-                            <li><a href="#" class="hover:underline focus:underline">Accessibilité</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Nous suivre</h3>
-                    <div class="flex space-x-4">
-                        <a href="#" aria-label="Instagram" class="hover:text-green-300 focus:text-green-300">
-                            <i class="fab fa-instagram text-2xl" aria-hidden="true"></i>
-                        </a>
-                        <a href="#" aria-label="YouTube" class="hover:text-green-300 focus:text-green-300">
-                            <i class="fab fa-youtube text-2xl" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                    
-                    <div class="mt-6">
-                        <p class="text-sm">Ce site est conforme au RGAA (Référentiel Général d'Amélioration de l'Accessibilité)</p>
-                        <a href="#" class="text-sm hover:underline focus:underline">Déclaration d'accessibilité</a>
-                    </div>
-                </div>
+                <nav aria-label="Navigation pied de page" role="navigation">
+                    <ul class="flex space-x-4">
+                        <li><a href="a-propos.html" class="hover:underline focus:underline">À propos</a></li>
+                        <li><a href="contact.html" class="hover:underline focus:underline">Contact</a></li>
+                        <li><a href="produit.html" class="hover:underline focus:underline">Produit</a></li>
+                        <li><a href="definitions.html#definitions-heading" class="hover:underline focus:underline">Définitions</a></li>
+                    </ul>
+                </nav>
             </div>
-        </div>
-    </footer>
-
+        </footer>
+    </main>
 </body>
 </html>
