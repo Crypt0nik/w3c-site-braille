@@ -8,7 +8,7 @@ Ce projet est un site vitrine respectant les règles du W3C et les bonnes pratiq
   - Navigation clavier optimisée (lien "Aller au contenu principal", focus visible, etc.)
   - Structure sémantique (titres, sections, listes, balises ARIA)
   - Contrastes adaptés et mode contraste élevé via CSS
-  - Formulaire accessible (labels, champs requis, navigation aisée, confirmation d'envoi accessible via popup ARIA)
+  - Formulaire accessible (labels, champs requis, navigation aisée, validation accessible par regex avec messages d’erreur, confirmation d'envoi accessible via popup ARIA)
   - Vidéo avec description, sous-titres et interprète LSF
 
 - **Présentation du livre**  
@@ -21,6 +21,7 @@ Ce projet est un site vitrine respectant les règles du W3C et les bonnes pratiq
 - **Formulaire de contact et précommande**  
   - Choix du format (braille, audio, standard, pack complet)
   - Inscription à la newsletter
+  - Validation accessible par regex (nom, email, téléphone, message) avec messages d’erreur accessibles
   - Popup de confirmation accessible avant envoi du formulaire
 
 - **Informations pratiques**  
@@ -34,7 +35,7 @@ Ce projet est un site vitrine respectant les règles du W3C et les bonnes pratiq
 ```
 w3c-site-braille/
 ├── index.html         # Page principale du site
-├── contact.html       # Formulaire de contact accessible avec popup de confirmation
+├── contact.html       # Formulaire de contact accessible avec validation regex et popup de confirmation
 ├── a-propos.html      # Présentation du projet et de l'auteur
 ├── definitions.html   # Définitions autour de l'accessibilité et du braille
 ├── produit.html       # Présentation détaillée du livre
@@ -49,7 +50,7 @@ w3c-site-braille/
 
 - **HTML5** sémantique
 - **CSS3** (avec TailwindCSS CDN pour la mise en page)
-- **JavaScript** vanilla pour l’accessibilité
+- **JavaScript** vanilla pour l’accessibilité et la validation du formulaire
 - **Font Awesome** pour les icônes
 - **Responsive design** (mobile, tablette, desktop)
 
@@ -60,7 +61,7 @@ Le site vise la conformité RGAA :
 - Contrastes respectés et mode contraste élevé via CSS
 - Structure sémantique et utilisation de rôles/attributs ARIA
 - Vidéo accessible (sous-titres, audio description, LSF)
-- Formulaire utilisable par tous (labels, champs requis, navigation aisée, confirmation d'envoi accessible)
+- Formulaire utilisable par tous (labels, champs requis, navigation aisée, validation accessible par regex avec messages d’erreur, confirmation d'envoi accessible)
 
 ## Lancer le projet
 

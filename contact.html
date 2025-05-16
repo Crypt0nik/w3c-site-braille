@@ -135,17 +135,120 @@
         const btnCancel = document.getElementById('confirm-cancel');
         let lastFocused;
 
-        if (!form) return;
+        // Validation regex et messages d'erreur accessibles
+        const nameInput = form.querySelector('#name');
+        const emailInput = form.querySelector('#email');
+        const phoneInput = form.querySelector('#phone');
+        const messageInput = form.querySelector('#message');
 
+        // Création des conteneurs d'erreur
+        function createErrorEl(id) {
+            let el = document.getElementById(id);
+            if (!el) {
+                el = document.createElement('div');
+                el.id = id;
+                el.className = 'text-red-600 text-sm mt-1';
+                el.setAttribute('role', 'alert');
+                el.setAttribute('aria-live', 'assertive');
+                el.setAttribute('tabindex', '-1');
+                el.style.display = 'none';
+                return el;
+            }
+            return el;
+        }
+        nameInput.insertAdjacentElement('afterend', createErrorEl('name-error'));
+        emailInput.insertAdjacentElement('afterend', createErrorEl('email-error'));
+        phoneInput.insertAdjacentElement('afterend', createErrorEl('phone-error'));
+        messageInput.insertAdjacentElement('afterend', createErrorEl('message-error'));
+
+        function showError(input, errorId, message) {
+            const el = document.getElementById(errorId);
+            el.textContent = message;
+            el.style.display = '';
+            input.setAttribute('aria-invalid', 'true');
+            el.focus();
+        }
+        function hideError(input, errorId) {
+            const el = document.getElementById(errorId);
+            el.textContent = '';
+            el.style.display = 'none';
+            input.removeAttribute('aria-invalid');
+        }
+
+        function validateName() {
+            const value = nameInput.value.trim();
+            // Lettres, espaces, tirets, apostrophes, min 2 caractères
+            const regex = /^[A-Za-zÀ-ÿ' -]{2,}$/;
+            if (!regex.test(value)) {
+                showError(nameInput, 'name-error', 'Veuillez entrer un nom valide (lettres, espaces, tirets, apostrophes, au moins 2 caractères).');
+                return false;
+            }
+            hideError(nameInput, 'name-error');
+            return true;
+        }
+        function validateEmail() {
+            const value = emailInput.value.trim();
+            // Email classique
+            const regex = /^[\w.-]+@[\w.-]+\.[A-Za-z]{2,}$/;
+            if (!regex.test(value)) {
+                showError(emailInput, 'email-error', 'Veuillez entrer une adresse email valide.');
+                return false;
+            }
+            hideError(emailInput, 'email-error');
+            return true;
+        }
+        function validatePhone() {
+            const value = phoneInput.value.trim();
+            if (value === '') {
+                hideError(phoneInput, 'phone-error');
+                return true;
+            }
+            // Format français : 0X XX XX XX XX ou +33 X XX XX XX XX
+            const regex = /^(0|\+33 ?)[1-9](?: ?\d{2}){4}$/;
+            if (!regex.test(value)) {
+                showError(phoneInput, 'phone-error', 'Veuillez entrer un numéro de téléphone français valide.');
+                return false;
+            }
+            hideError(phoneInput, 'phone-error');
+            return true;
+        }
+        function validateMessage() {
+            const value = messageInput.value.trim();
+            if (value.length < 2) {
+                showError(messageInput, 'message-error', 'Veuillez entrer un message.');
+                return false;
+            }
+            hideError(messageInput, 'message-error');
+            return true;
+        }
+
+        // Validation au blur
+        nameInput.addEventListener('blur', validateName);
+        emailInput.addEventListener('blur', validateEmail);
+        phoneInput.addEventListener('blur', validatePhone);
+        messageInput.addEventListener('blur', validateMessage);
+
+        // Validation au submit (avant popup)
         form.addEventListener('submit', function (e) {
-            // Empêche l'envoi immédiat
+            let valid = true;
+            if (!validateName()) valid = false;
+            if (!validateEmail()) valid = false;
+            if (!validatePhone()) valid = false;
+            if (!validateMessage()) valid = false;
+            if (!valid) {
+                e.preventDefault();
+                // Focus sur le premier champ en erreur
+                const firstError = form.querySelector('[aria-invalid="true"]');
+                if (firstError) firstError.focus();
+                return;
+            }
+            // Empêche l'envoi immédiat (popup)
             e.preventDefault();
             lastFocused = document.activeElement;
             popup.classList.remove('hidden');
             popup.focus();
-            // Piège le focus dans la popup
             trapFocus(popup);
-        });
+        }, true);
 
         btnOk.addEventListener('click', function () {
             closePopup();
