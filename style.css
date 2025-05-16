@@ -38,3 +38,87 @@
         border: 2px solid black !important;
     }
 }
+.texte-petit { font-size: 14px !important; }
+.texte-moyen { font-size: 18px !important; }
+.texte-grand { font-size: 22px !important; }
+.contraste-eleve, .contraste-eleve body {
+    background: #000 !important;
+    color: #fff !important;
+}
+.contraste-eleve a {
+    color: #00ffff !important;
+    text-decoration: underline !important;
+}
+.contraste-eleve header,
+.contraste-eleve footer,
+.contraste-eleve .bg-green-700,
+.contraste-eleve .bg-green-800,
+.contraste-eleve .bg-green-100,
+.contraste-eleve .bg-green-50,
+.contraste-eleve .bg-yellow-50,
+.contraste-eleve .bg-white {
+    background: #111 !important;
+    color: #fff !important;
+}
+.contraste-eleve .rounded-lg,
+.contraste-eleve .rounded-xl,
+.contraste-eleve .shadow,
+.contraste-eleve .shadow-md,
+.contraste-eleve .shadow-2xl,
+.contraste-eleve .border,
+.contraste-eleve .border-green-100,
+.contraste-eleve .border-green-200,
+.contraste-eleve .border-yellow-200 {
+    background: #111 !important;
+    color: #fff !important;
+    border-color: #fff !important;
+}
+.contraste-eleve button,
+.contraste-eleve [role="button"] {
+    background: #fff !important;
+    color: #000 !important;
+    border: 2px solid #fff !important;
+}
+.contraste-eleve button:hover,
+.contraste-eleve [role="button"]:hover {
+    background: #ff0 !important;
+    color: #000 !important;
+    border-color: #ff0 !important;
+}
+.contraste-eleve input,
+.contraste-eleve textarea,
+.contraste-eleve select {
+    background: #222 !important;
+    color: #fff !important;
+    border: 1px solid #fff !important;
+}
+.contraste-eleve .text-green-700,
+.contraste-eleve .text-green-800,
+.contraste-eleve .text-yellow-700,
+.contraste-eleve .text-yellow-900 {
+    color: #fff !important;
+}
+.contraste-eleve .bg-yellow-400,
+.contraste-eleve .bg-yellow-500 {
+    background: #222 !important;
+    color: #fff !important;
+}
+.contraste-eleve .prose {
+    color: #fff !important;
+}
+#progress-bar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1000;
+}
+#progress-bar {
+    height: 6px;
+    width: 0;
+    background: linear-gradient(90deg,#22c55e,#facc15);
+    transition: width 0.2s;
+}
+.contraste-eleve #progress-bar {
+    background: linear-gradient(90deg,#fff,#ff0);
+}

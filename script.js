@@ -1,4 +1,3 @@
-
 // Simple script to enhance accessibility
 document.addEventListener('DOMContentLoaded', function() {
     // Add aria-live for dynamic content
@@ -28,4 +27,54 @@ document.addEventListener('DOMContentLoaded', function() {
         target.focus();
         setTimeout(() => target.removeAttribute('tabindex'), 1000);
     });
+});
+
+// Barre de progression de lecture
+window.addEventListener('scroll', function() {
+  const bar = document.getElementById('progress-bar');
+  if (!bar) return;
+  const scrollTop = window.scrollY || document.documentElement.scrollTop;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const percent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  bar.style.width = percent + '%';
+});
+
+function changerTaille(taille) {
+  document.body.classList.remove('texte-petit', 'texte-moyen', 'texte-grand');
+  document.body.classList.add('texte-' + taille);
+  localStorage.setItem('tailleTexte', taille);
+}
+function toggleContraste() {
+  const isActive = document.body.classList.toggle('contraste-eleve');
+  localStorage.setItem('contrasteEleve', isActive ? '1' : '0');
+}
+// Appliquer les préférences au chargement
+(function() {
+  const taille = localStorage.getItem('tailleTexte');
+  if (taille) {
+    document.body.classList.add('texte-' + taille);
+  }
+  if (localStorage.getItem('contrasteEleve') === '1') {
+    document.body.classList.add('contraste-eleve');
+  }
+})();
+
+// Multilingue : gestion du sélecteur de langue et affichage
+function setLang(lang) {
+  localStorage.setItem('lang', lang);
+  document.documentElement.lang = lang;
+  document.getElementById('lang-select').value = lang;
+  document.querySelectorAll('.multilingual').forEach(function(el) {
+    if (el.dataset[lang]) {
+      el.textContent = el.dataset[lang];
+    }
+  });
+}
+document.addEventListener('DOMContentLoaded', function() {
+  // Multilingue : initialisation
+  const lang = localStorage.getItem('lang') || 'fr';
+  setLang(lang);
+  document.getElementById('lang-select').addEventListener('change', function(e) {
+    setLang(e.target.value);
+  });
 });

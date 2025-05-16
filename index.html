@@ -7,12 +7,12 @@
     <title>Le Jardin d'Arthur - Livre accessible pour enfants</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 <body class="bg-gray-50 text-gray-900 font-sans leading-relaxed">
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:bg-white focus:px-4 focus:py-2 focus:z-50">
-        Aller au contenu principal
-    </a>
+    <div class="flex justify-end items-center gap-2 mt-2 mb-4">
+    </div>
 
     <header class="bg-green-700 text-white">
         <div class="container mx-auto px-4 py-8 flex flex-col md:flex-row justify-between items-center">
@@ -40,9 +40,14 @@
                 <div class="absolute inset-0 pointer-events-none" aria-hidden="true" style="background: radial-gradient(circle at 70% 30%, rgba(34,197,94,0.12) 0%, transparent 70%);"></div>
                 <h2 id="accueil-heading" class="text-4xl md:text-5xl font-extrabold text-green-900 mb-4 text-center tracking-tight">Bienvenue sur Le Jardin d'Arthur</h2>
                 <p class="text-2xl md:text-3xl text-green-700 font-medium mb-6 text-center max-w-2xl">Un livre pour enfants accessible à tous, en braille, audio et version standard.</p>
-                <a href="#presentation" class="mt-4 inline-block bg-green-700 hover:bg-green-800 text-white font-bold py-3 px-8 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 transition text-lg" role="button">
-                    Découvrir le projet
-                </a>
+                <div class="flex flex-col sm:flex-row items-center gap-4 justify-center">
+                    <a href="#presentation" class="mt-4 inline-block bg-green-700 hover:bg-green-800 text-white font-bold py-3 px-8 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 transition text-lg" role="button">
+                        Découvrir le projet
+                    </a>
+                    <a href="#falc" class="mt-4 inline-block bg-yellow-400 hover:bg-yellow-500 text-yellow-900 font-bold py-3 px-8 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 transition text-lg" role="button">
+                        Version FALC
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -128,10 +133,9 @@
                     <li class="mb-2">La manipulation des pages épaisses et des éléments tactiles</li>
                     <li class="mb-2">La lecture audio synchronisée avec le texte en gros caractères</li>
                     <li class="mb-2">Les illustrations contrastées et les éléments en relief</li>
-                    <li class="mb-2">Une interprète en Langue des Signes Française (LSF)</li>
+                    <li class="mb-2">Une interprète en Langue des Signes Française (LSF) visible à l'écran (piste LSF présente dans la vidéo)</li>
                 </ul>
-                <p class="mt-4"><strong>Note :</strong> Cette vidéo inclut des sous-titres et une piste audio descriptive. Activez ces options dans les paramètres du lecteur vidéo si nécessaire.</p>
-
+                <p class="mt-4"><strong>Note :</strong> Cette vidéo inclut des sous-titres, une piste audio descriptive et une interprète LSF. Activez ces options dans les paramètres du lecteur vidéo si nécessaire.</p>
             </div>
         </section>
 
@@ -143,6 +147,26 @@
                     Accéder à la page contact
                 </a>
             </div>
+        </section>
+
+        <div id="personnalisation" class="flex flex-wrap gap-2 justify-center my-6" aria-label="Personnalisation de l'affichage">
+            <button onclick="changerTaille('petit')" class="px-3 py-1 bg-green-100 rounded hover:bg-green-200 focus:ring-2 focus:ring-green-500">Texte petit</button>
+            <button onclick="changerTaille('moyen')" class="px-3 py-1 bg-green-100 rounded hover:bg-green-200 focus:ring-2 focus:ring-green-500">Texte moyen</button>
+            <button onclick="changerTaille('grand')" class="px-3 py-1 bg-green-100 rounded hover:bg-green-200 focus:ring-2 focus:ring-green-500">Texte grand</button>
+            <button onclick="toggleContraste()" class="px-3 py-1 bg-green-100 rounded hover:bg-green-200 focus:ring-2 focus:ring-green-500">Contraste élevé</button>
+        </div>
+
+        <section id="falc" aria-labelledby="titre-falc" class="bg-yellow-50 rounded-xl p-6 my-8 border border-yellow-200 max-w-2xl mx-auto">
+            <h2 id="titre-falc" class="text-2xl font-bold text-yellow-700 mb-4">Version facile à lire et à comprendre (FALC)</h2>
+            <p class="text-lg mb-2">Ce site explique comment rendre un livre accessible à tout le monde.</p>
+            <ul class="list-disc pl-6 mb-2">
+                <li>Accessible veut dire : facile à utiliser pour toutes les personnes, même si elles ont un handicap.</li>
+                <li>Par exemple : les personnes aveugles, sourdes, ou qui ont du mal à lire.</li>
+                <li>Le livre existe en braille, en audio, en version normale et avec la Langue des Signes Française (LSF).</li>
+                <li>Tu peux choisir le format qui te convient.</li>
+                <li>Si tu as une question, tu peux nous écrire avec le formulaire de contact.</li>
+            </ul>
+            <p class="text-lg">Pour changer la taille du texte ou le contraste, utilise les boutons en haut de la page.</p>
         </section>
 
         <footer class="bg-green-800 text-white py-8 mt-12">
@@ -162,5 +186,7 @@
             </div>
         </footer>
     </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
