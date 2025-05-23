@@ -15,6 +15,7 @@ Ce projet est un site vitrine respectant les règles du W3C et les bonnes pratiq
 
 - **Présentation du livre**  
   - Description détaillée et illustration de la couverture
+  - **Carrousel interactif** alternant entre la version braille et audio du livre
   - Explication des apports éducatifs et du public cible
 
 - **Vidéo de démonstration**  
@@ -39,17 +40,23 @@ Ce projet est un site vitrine respectant les règles du W3C et les bonnes pratiq
 - **Footer**  
   - Navigation secondaire, réseaux sociaux, conformité RGAA
 
+- **Optimisations SEO**
+  - Ajout d’un fichier `sitemap.xml` pour l’indexation des pages
+  - Ajout d’un fichier `robots.txt` pour guider les moteurs de recherche
+
 ## Structure du projet
 
 ```
 w3c-site-braille/
-├── index.html         # Page principale du site
+├── index.html         # Page principale du site avec carrousel interactif
 ├── contact.html       # Formulaire de contact accessible avec validation regex et popup de confirmation
 ├── a-propos.html      # Présentation du projet et de l'auteur
 ├── definitions.html   # Définitions autour de l'accessibilité et du braille
-├── produit.html       # Présentation détaillée du livre
+├── produit.html       # Présentation détaillée du livre avec deux produits (braille et audio)
 ├── style.css          # Feuilles de style personnalisées (accessibilité, contraste, etc.)
-├── script.js          # Script JS pour l’accessibilité (focus, aria-live, personnalisation, persistance)
+├── script.js          # Script JS pour l’accessibilité (focus, aria-live, personnalisation, persistance, carrousel)
+├── sitemap.xml        # Fichier pour l’indexation des pages par les moteurs de recherche
+├── robots.txt         # Fichier pour guider les moteurs de recherche
 ├── images/            # Images du site (ex : couverture du livre)
 ├── videos/            # Vidéos de démonstration accessibles
 └── README.md          # Ce fichier
@@ -59,7 +66,7 @@ w3c-site-braille/
 
 - **HTML5** sémantique
 - **CSS3** (avec TailwindCSS CDN pour la mise en page)
-- **JavaScript** vanilla pour l’accessibilité, la personnalisation et la validation du formulaire
+- **JavaScript** vanilla pour l’accessibilité, la personnalisation, le carrousel et la validation du formulaire
 - **Font Awesome** pour les icônes
 - **Responsive design** (mobile, tablette, desktop)
 
@@ -73,6 +80,7 @@ Le site vise la conformité RGAA :
 - Vidéo accessible (sous-titres, audio description, LSF)
 - Formulaire utilisable par tous (labels, champs requis, navigation aisée, validation accessible par regex avec messages d’erreur, confirmation d'envoi accessible)
 - Version FALC (Facile à Lire et à Comprendre) disponible
+- **Carrousel accessible** avec navigation clavier et tactile
 
 ## Lancer le projet
 
