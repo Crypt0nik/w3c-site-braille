@@ -1,3 +1,47 @@
+// Carrousel accessible pour la page d'accueil
+document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.getElementById('carousel-livre');
+    if (!carousel) return;
+    const images = [
+        document.getElementById('carousel-image'),
+        document.getElementById('carousel-image-audio')
+    ];
+    const dots = carousel.querySelectorAll('.carousel-dot');
+    let current = 0;
+    function show(index) {
+        images.forEach((img, i) => {
+            if (i === index) {
+                img.classList.remove('hidden');
+                dots[i].classList.remove('bg-green-200');
+                dots[i].classList.add('bg-green-700');
+                dots[i].setAttribute('aria-current', 'true');
+            } else {
+                img.classList.add('hidden');
+                dots[i].classList.remove('bg-green-700');
+                dots[i].classList.add('bg-green-200');
+                dots[i].removeAttribute('aria-current');
+            }
+        });
+        current = index;
+    }
+    carousel.querySelector('#carousel-prev').addEventListener('click', function() {
+        show((current - 1 + images.length) % images.length);
+    });
+    carousel.querySelector('#carousel-next').addEventListener('click', function() {
+        show((current + 1) % images.length);
+    });
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => show(i));
+    });
+    carousel.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') {
+            show((current - 1 + images.length) % images.length);
+        } else if (e.key === 'ArrowRight') {
+            show((current + 1) % images.length);
+        }
+    });
+    show(0);
+});
 // Simple script to enhance accessibility
 document.addEventListener('DOMContentLoaded', function() {
     // Add aria-live for dynamic content

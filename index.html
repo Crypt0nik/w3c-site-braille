@@ -52,14 +52,24 @@
 
         <section id="presentation" aria-labelledby="presentation-heading" class="mb-12">
             <h2 id="presentation-heading" class="text-2xl font-bold mb-6 text-green-800">Découvrez le Jardin d'Arthur</h2>
-            
+            <!-- Carrousel accessible -->
             <div class="flex flex-col lg:flex-row gap-8">
-                <div class="lg:w-1/2">
-                    <img src="/images/jardinarthurbraille.png" 
-                         alt="Couverture du livre 'Le Jardin d'Arthur' montrant une petite fille aux cheveux bouclés dans un jardin fleuri, entourée d'animaux. Le livre est ouvert et montre des illustrations colorées avec du texte en gros caractères et des éléments tactiles."
-                         class="w-full rounded-lg shadow-md" width="600" height="400" loading="lazy">
+                <div class="lg:w-1/2 flex flex-col items-center">
+                    <div id="carousel-livre" class="relative w-full max-w-lg" aria-roledescription="carrousel" aria-label="Présentation visuelle du livre" tabindex="0">
+                        <button id="carousel-prev" aria-label="Image précédente" class="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white bg-opacity-80 rounded-full p-2 shadow focus:ring-2 focus:ring-green-400" style="min-width:44px;min-height:44px;">
+                            <i class="fas fa-chevron-left text-green-700"></i>
+                        </button>
+                        <img id="carousel-image" src="images/jardinarthurbraille.png" alt="Couverture du livre Le Jardin d'Arthur en version braille" class="rounded-xl shadow-lg w-full h-auto transition duration-300" width="600" height="400" loading="lazy">
+                        <img id="carousel-image-audio" src="images/Jardin Arthur Version Audio.png" alt="Couverture du livre Le Jardin d'Arthur version audio" class="rounded-xl shadow-lg w-full h-auto transition duration-300 hidden" width="600" height="400" loading="lazy">
+                        <button id="carousel-next" aria-label="Image suivante" class="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white bg-opacity-80 rounded-full p-2 shadow focus:ring-2 focus:ring-green-400" style="min-width:44px;min-height:44px;">
+                            <i class="fas fa-chevron-right text-green-700"></i>
+                        </button>
+                        <div class="flex justify-center mt-2 gap-2" aria-label="Navigation du carrousel">
+                            <button class="carousel-dot w-11 h-11 rounded-full bg-green-700 focus:ring-2 focus:ring-green-400 focus:outline-none" aria-label="Voir l'image 1" aria-current="true" style="min-width:44px;min-height:44px;"></button>
+                            <button class="carousel-dot w-11 h-11 rounded-full bg-green-200 focus:ring-2 focus:ring-green-400 focus:outline-none" aria-label="Voir l'image 2" style="min-width:44px;min-height:44px;"></button>
+                        </div>
+                    </div>
                 </div>
-                
                 <div class="lg:w-1/2">
                     <div class="prose max-w-none">
                         <h3 class="text-xl font-semibold mb-4 text-green-700">Un livre inclusif pour tous les enfants</h3>
