@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-50 text-gray-900 font-sans leading-relaxed">
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:bg-white focus:px-4 focus:py-2 focus:z-50">
-        Aller au contenu principal
-    </a>
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:bg-white focus:px-4 focus:py-2 focus:z-50 rounded-lg shadow-lg transition">Aller au contenu principal</a>
     <header class="bg-green-700 text-white">
         <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center">
             <h1 class="text-2xl font-bold">À propos du Jardin d'Arthur</h1>
@@ -20,29 +18,33 @@
                     <li><a href="produit.html" class="hover:underline focus:underline">Produit</a></li>
                     <li><a href="contact.html" class="hover:underline focus:underline">Contact</a></li>
                     <li><a href="a-propos.html" class="hover:underline focus:underline">À propos</a></li>
-                    
                 </ul>
             </nav>
         </div>
     </header>
     <main id="main-content" class="container mx-auto px-4 py-8">
-        <h2 class="text-3xl font-extrabold text-green-800 mb-8 text-center tracking-tight">Notre démarche</h2>
-        <section aria-labelledby="apropos-accessibilite" class="bg-white rounded-2xl shadow-2xl p-8 border border-green-100 mb-8">
-            <h3 id="apropos-accessibilite" class="text-2xl font-semibold text-green-700 mb-4">Accessibilité et inclusion</h3>
-            <p class="text-lg">Le Jardin d'Arthur est un projet né de la volonté de rendre la lecture accessible à tous les enfants, quels que soient leurs besoins. Nous avons conçu ce livre en respectant les normes d’accessibilité numérique (W3C, RGAA) et en intégrant des formats adaptés : braille, audio, gros caractères, et LSF.</p>
-        </section>
-        <section aria-labelledby="apropos-auteur" class="bg-green-50 rounded-2xl shadow p-8 border border-green-100 mb-8">
-            <h3 id="apropos-auteur" class="text-2xl font-semibold text-green-700 mb-4">L'auteur</h3>
-            <p class="text-lg">Arthur Chesse, étudiant à Ynov, passionné par l’inclusion et l’innovation pédagogique, a imaginé ce livre pour que chaque enfant puisse vivre la magie des histoires, sans barrière.</p>
-        </section>
-        <section aria-labelledby="apropos-engagement" class="bg-white rounded-2xl shadow-2xl p-8 border border-green-100 mb-8">
-            <h3 id="apropos-engagement" class="text-2xl font-semibold text-green-700 mb-4">Notre engagement</h3>
-            <ul class="list-disc pl-6 text-lg space-y-2">
-                <li>Respect des standards W3C et RGAA</li>
-                <li>Tests utilisateurs avec des enfants en situation de handicap</li>
-                <li>Amélioration continue grâce à vos retours</li>
-            </ul>
-        </section>
+        <h2 class="text-4xl font-extrabold text-green-800 mb-12 text-center tracking-tight">Notre démarche</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <section aria-labelledby="apropos-accessibilite" class="bg-white rounded-3xl shadow-2xl p-8 border-2 border-green-200 flex flex-col items-center">
+                <img src="images/lejardinarthur.png" alt="Illustration du livre Le Jardin d'Arthur" class="w-24 h-24 mb-4 rounded-xl shadow-md border border-green-100" />
+                <h3 id="apropos-accessibilite" class="text-2xl font-bold text-green-700 mb-2">Accessibilité & Inclusion</h3>
+                <p class="text-base text-center">Le Jardin d'Arthur est né de la volonté de rendre la lecture accessible à tous les enfants, quels que soient leurs besoins. Le livre existe en braille, audio, gros caractères et LSF, et respecte les normes d’accessibilité numérique (W3C, RGAA).</p>
+            </section>
+            <section aria-labelledby="apropos-auteur" class="bg-green-50 rounded-3xl shadow p-8 border-2 border-green-200 flex flex-col items-center">
+                <img src="images/jardinarthurbraille.png" alt="Portrait stylisé de l'auteur Arthur Chesse" class="w-24 h-24 mb-4 rounded-full shadow-md border border-green-100 object-cover" />
+                <h3 id="apropos-auteur" class="text-2xl font-bold text-green-700 mb-2">L'auteur</h3>
+                <p class="text-base text-center">Arthur Chesse, étudiant à Ynov, passionné par l’inclusion et l’innovation pédagogique, a imaginé ce livre pour que chaque enfant puisse vivre la magie des histoires, sans barrière.</p>
+            </section>
+            <section aria-labelledby="apropos-engagement" class="bg-white rounded-3xl shadow-2xl p-8 border-2 border-green-200 flex flex-col items-center">
+                <svg aria-hidden="true" class="w-16 h-16 mb-4 text-green-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                <h3 id="apropos-engagement" class="text-2xl font-bold text-green-700 mb-2">Notre engagement</h3>
+                <ul class="list-disc pl-6 text-base space-y-2 text-left">
+                    <li>Respect des standards W3C et RGAA</li>
+                    <li>Tests utilisateurs avec des enfants en situation de handicap</li>
+                    <li>Amélioration continue grâce à vos retours</li>
+                </ul>
+            </section>
+        </div>
         <nav aria-label="Retour aux sections principales" class="mt-12 flex justify-center">
             <a href="index.html#accueil" class="inline-flex items-center text-green-700 hover:underline font-semibold text-lg focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 transition">
                 Retour à l'accueil
@@ -50,10 +52,10 @@
         </nav>
     </main>
     <footer class="bg-green-700 text-white py-6 mt-12">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
             <p class="text-sm">&copy; 2025 Le Jardin d'Arthur. Tous droits réservés.</p>
             <nav aria-label="Navigation pied de page">
-                <ul class="flex space-x-4">
+                <ul class="flex flex-wrap gap-4 text-base">
                     <li><a href="a-propos.html" class="hover:underline focus:underline">À propos</a></li>
                     <li><a href="contact.html" class="hover:underline focus:underline">Contact</a></li>
                     <li><a href="produit.html" class="hover:underline focus:underline">Produit</a></li>

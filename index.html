@@ -10,14 +10,13 @@
     <link rel="stylesheet" href="style.css">
 
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans leading-relaxed">
-    <div class="flex justify-end items-center gap-2 mt-2 mb-4">
-    </div>
+<body class="bg-gray-100 text-gray-900 font-sans leading-relaxed">
+    <!-- Suppression de l'espace vide au-dessus de la navigation -->
 
     <header class="bg-green-700 text-white">
         <div class="container mx-auto px-4 py-8 flex flex-col md:flex-row justify-between items-center">
             <div class="mb-4 md:mb-0 flex items-center space-x-4">
-                <img src="/images/lejardinarthur.png" alt="Logo Le Jardin d'Arthur" class="h-14 w-14 rounded-full shadow border-2 border-white bg-white" />
+                <img src="/images/lejardinarthur.png" alt="Logo Le Jardin d'Arthur" class="h-14 w-14 rounded-full shadow border-2 border-white bg-white" width="56" height="56" loading="lazy" />
                 <div>
                     <h1 class="text-3xl font-bold leading-tight">Le Jardin d'Arthur</h1>
                     <span class="text-xl font-normal block">Un livre accessible pour tous</span>
@@ -58,7 +57,7 @@
                 <div class="lg:w-1/2">
                     <img src="/images/jardinarthurbraille.png" 
                          alt="Couverture du livre 'Le Jardin d'Arthur' montrant une petite fille aux cheveux bouclés dans un jardin fleuri, entourée d'animaux. Le livre est ouvert et montre des illustrations colorées avec du texte en gros caractères et des éléments tactiles."
-                         class="w-full rounded-lg shadow-md">
+                         class="w-full rounded-lg shadow-md" width="600" height="400" loading="lazy">
                 </div>
                 
                 <div class="lg:w-1/2">
@@ -66,19 +65,19 @@
                         <h3 class="text-xl font-semibold mb-4 text-green-700">Un livre inclusif pour tous les enfants</h3>
                         <p class="mb-4">"Le Jardin d'Arthur" est un conte illustré spécialement conçu pour être accessible à tous les enfants, y compris ceux en situation de handicap visuel ou auditif.</p>
                         
-                        <h4 class="font-semibold mb-2 text-green-600">L'histoire</h4>
+                        <h4 class="font-semibold mb-2 text-green-800">L'histoire</h4>
                         <p class="mb-4">Arthur, un petit garçon curieux, découvre un jardin magique où chaque fleur raconte une histoire. À travers son aventure, il apprend l'importance de la diversité et de l'amitié.</p>
                         
-                        <h4 class="font-semibold mb-2 text-green-600">Public cible</h4>
+                        <h4 class="font-semibold mb-2 text-green-800">Public cible</h4>
                         <p class="mb-4">Conçu pour les enfants de 3 à 8 ans, ce livre est particulièrement adapté pour :</p>
                         <ul class="list-disc pl-6 mb-4">
-                            <li class="mb-2">Les enfants malvoyants ou non-voyants (version <a href="definitions.html#def-braille" class="text-green-700 underline hover:text-green-900" aria-describedby="def-braille-desc">braille</a>) <span id="def-braille-desc" class="sr-only">Voir la définition de braille</span></li>
-                            <li class="mb-2">Les enfants sourds ou malentendants (<a href="definitions.html#def-lsf" class="text-green-700 underline hover:text-green-900" aria-describedby="def-lsf-desc">LSF</a>) <span id="def-lsf-desc" class="sr-only">Voir la définition de LSF</span></li>
+                            <li class="mb-2">Les enfants malvoyants ou non-voyants (version <a href="definitions.html#def-braille" class="text-green-700 underline hover:text-green-900 inline-block px-2 py-1 rounded focus:ring-2 focus:ring-green-400 focus:outline-none" aria-describedby="def-braille-desc" style="min-width:44px;min-height:44px;">braille</a>) <span id="def-braille-desc" class="sr-only">Voir la définition de braille</span></li>
+                            <li class="mb-2">Les enfants sourds ou malentendants (<a href="definitions.html#def-lsf" class="text-green-700 underline hover:text-green-900 inline-block px-2 py-1 rounded focus:ring-2 focus:ring-green-400 focus:outline-none" aria-describedby="def-lsf-desc" style="min-width:44px;min-height:44px;">LSF</a>) <span id="def-lsf-desc" class="sr-only">Voir la définition de LSF</span></li>
                             <li class="mb-2">Les enfants avec des difficultés de lecture (police adaptée, <a href="definitions.html#def-accessibilite" class="text-green-700 underline hover:text-green-900" aria-describedby="def-accessibilite-desc">accessibilité numérique</a>) <span id="def-accessibilite-desc" class="sr-only">Voir la définition de l'accessibilité numérique</span></li>
                             <li class="mb-2">Tous les enfants qui aiment les belles histoires !</li>
                         </ul>
                         
-                        <h4 class="font-semibold mb-2 text-green-600">Apports éducatifs</h4>
+                        <h4 class="font-semibold mb-2 text-green-800">Apports éducatifs</h4>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                             <div class="bg-green-100 p-4 rounded-lg">
                                 <i class="fas fa-hand-holding-heart text-green-700 mb-2" aria-hidden="true"></i>
@@ -110,6 +109,7 @@
                     <!-- Video with captions and audio description -->
                     <video 
                         class="absolute top-0 left-0 w-full h-full"
+                        width="560" height="315"
                         controls
                         aria-label="Description audio : une femme qui teste le produit en lisant en braille sur le livre"
                         title="Démonstration du livre Le Jardin d'Arthur"
@@ -117,11 +117,13 @@
                     >
                         <source src="/videos/video_braille.mp4" type="video/mp4">
                         <track 
-        kind="subtitles" 
-        src="/Sous%20titre/Sous-titres%20Braille%20en%20fran%C3%A7ais.vtt" 
-        srclang="fr" 
-        label="Français" 
-        default>
+                            kind="subtitles" 
+                            src="/Sous%20titre/Sous-titres%20Braille%20en%20fran%C3%A7ais.vtt" 
+                            srclang="fr" 
+                            label="Français" 
+                            default>
+    <!-- Astuce performance : Précharger la police FontAwesome -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
                         Votre navigateur ne supporte pas la vidéo HTML5.
                     </video>
                 </div>
