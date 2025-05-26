@@ -42,12 +42,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     show(0);
 });
+
 // Simple script to enhance accessibility
 document.addEventListener('DOMContentLoaded', function() {
     // Add aria-live for dynamic content
     const main = document.querySelector('main');
     main.setAttribute('aria-live', 'polite');
-    
+
     // Manage focus for modal if needed
     const formInputs = document.querySelectorAll('input, textarea, select, button');
     formInputs.forEach(input => {
@@ -55,13 +56,13 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.outline = '3px solid #3b82f6';
             this.style.outlineOffset = '2px';
         });
-        
+
         input.addEventListener('blur', function() {
             this.style.outline = '';
             this.style.outlineOffset = '';
         });
     });
-    
+
     // Skip to content link
     const skipLink = document.querySelector('a[href="#main-content"]');
     skipLink.addEventListener('click', function(e) {
@@ -71,6 +72,52 @@ document.addEventListener('DOMContentLoaded', function() {
         target.focus();
         setTimeout(() => target.removeAttribute('tabindex'), 1000);
     });
+});
+
+// Validation du formulaire de contact
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const fields = form.querySelectorAll('input, textarea');
+
+    // Fonction pour activer/désactiver le bouton de soumission
+    function toggleSubmit() {
+        if (form.checkValidity()) {
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('bg-opacity-50', 'cursor-not-allowed');
+            submitBtn.classList.add('bg-opacity-100');
+            submitBtn.removeAttribute('aria-disabled');
+        } else {
+            submitBtn.disabled = true;
+            submitBtn.classList.add('bg-opacity-50', 'cursor-not-allowed');
+            submitBtn.classList.remove('bg-opacity-100');
+            submitBtn.setAttribute('aria-disabled', 'true');
+        }
+    }
+
+    // Fonction pour valider un champ et afficher les erreurs
+    function validateField(field) {
+        const errorSpan = document.getElementById(`${field.id}-error`);
+        if (!field.checkValidity()) {
+            errorSpan.classList.remove('hidden');
+            errorSpan.textContent = field.validationMessage;
+        } else {
+            errorSpan.classList.add('hidden');
+            errorSpan.textContent = '';
+        }
+    }
+
+    // Ajouter des écouteurs sur chaque champ pour validation dynamique
+    fields.forEach(field => {
+        field.addEventListener('input', () => {
+            validateField(field);
+            toggleSubmit();
+        });
+        field.addEventListener('blur', () => validateField(field));
+    });
+
+    // Initialiser l'état du bouton
+    toggleSubmit();
 });
 
 // Barre de progression de lecture

@@ -20,7 +20,6 @@
                     <li><a href="produit.html" class="hover:underline focus:underline">Produit</a></li>
                     <li><a href="contact.html" class="hover:underline focus:underline">Contact</a></li>
                     <li><a href="a-propos.html" class="hover:underline focus:underline">À propos</a></li>
-                    
                 </ul>
             </nav>
         </div>
@@ -32,10 +31,28 @@
                 <h3 id="contact-form" class="text-2xl font-semibold text-green-700 mb-4">Formulaire de contact</h3>
                 <form action="https://formspree.io/f/xdkevrzz" method="POST" class="space-y-4" aria-labelledby="contact-form">
                     <div>
-                        <label for="name" class="block mb-1 font-medium">Nom complet <span aria-hidden="true" class="text-red-600">*</span></label>
+                        <label for="firstname" class="block mb-1 font-medium">Prénom <span aria-hidden="true" class="text-red-600">*</span></label>
+                        <input type="text" id="firstname" name="firstname" required aria-required="true" aria-describedby="firstname-desc"
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                        <span id="firstname-desc" class="text-sm text-gray-500">Champ obligatoire</span>
+                    </div>
+                    <div>
+                        <label for="name" class="block mb-1 font-medium">Nom <span aria-hidden="true" class="text-red-600">*</span></label>
                         <input type="text" id="name" name="name" required aria-required="true" aria-describedby="name-desc"
                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
                         <span id="name-desc" class="text-sm text-gray-500">Champ obligatoire</span>
+                    </div>
+                    <div>
+                        <label for="phone" class="block mb-1 font-medium">Téléphone <span aria-hidden="true" class="text-red-600">*</span></label>
+                        <input type="tel" id="phone" name="phone" required aria-required="true" aria-describedby="phone-desc"
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                        <span id="phone-desc" class="text-sm text-gray-500">Champ obligatoire, format attendu : 0601020304</span>
+                    </div>
+                    <div>
+                        <label for="age" class="block mb-1 font-medium">Âge <span aria-hidden="true" class="text-red-600">*</span></label>
+                        <input type="number" id="age" name="age" required aria-required="true" aria-describedby="age-desc"
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                        <span id="age-desc" class="text-sm text-gray-500">Champ obligatoire</span>
                     </div>
                     <div>
                         <label for="email" class="block mb-1 font-medium">Adresse email <span aria-hidden="true" class="text-red-600">*</span></label>
@@ -44,41 +61,10 @@
                         <span id="email-desc" class="text-sm text-gray-500">Champ obligatoire, format attendu : nom@domaine.com</span>
                     </div>
                     <div>
-                        <label for="phone" class="block mb-1 font-medium">Téléphone <span class="text-gray-500">(facultatif)</span></label>
-                        <input type="tel" id="phone" name="phone" aria-describedby="phone-desc"
-                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
-                        <span id="phone-desc" class="text-sm text-gray-500">Champ facultatif, format attendu : 06 12 34 56 78</span>
-                    </div>
-                    <div>
                         <label for="message" class="block mb-1 font-medium">Votre message <span aria-hidden="true" class="text-red-600">*</span></label>
                         <textarea id="message" name="message" rows="4" required aria-required="true" aria-describedby="message-desc"
                                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"></textarea>
                         <span id="message-desc" class="text-sm text-gray-500">Champ obligatoire</span>
-                    </div>
-                    <fieldset class="border border-gray-300 rounded-lg p-4">
-                        <legend class="block mb-1 font-medium">Format souhaité <span aria-hidden="true" class="text-red-600">*</span></legend>
-                        <div class="space-y-2">
-                            <div class="flex items-center">
-                                <input type="radio" id="format-braille" name="format" value="braille" required aria-required="true">
-                                <label for="format-braille" class="ml-2">Version braille</label>
-                            </div>
-                            <div class="flex items-center">
-                                <input type="radio" id="format-audio" name="format" value="audio" required aria-required="true">
-                                <label for="format-audio" class="ml-2">Version audio</label>
-                            </div>
-                            <div class="flex items-center">
-                                <input type="radio" id="format-standard" name="format" value="standard" required aria-required="true">
-                                <label for="format-standard" class="ml-2">Version standard</label>
-                            </div>
-                            <div class="flex items-center">
-                                <input type="radio" id="format-combo" name="format" value="combo" required aria-required="true">
-                                <label for="format-combo" class="ml-2">Pack complet (braille + audio + standard)</label>
-                            </div>
-                        </div>
-                    </fieldset>
-                    <div class="flex items-center">
-                        <input type="checkbox" id="newsletter" name="newsletter">
-                        <label for="newsletter" class="ml-2">Je souhaite recevoir des informations sur les nouveaux livres accessibles</label>
                     </div>
                     <button type="submit" class="bg-green-700 hover:bg-green-800 text-white font-bold py-3 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition flex items-center">
                         Envoyer ma demande
@@ -114,19 +100,5 @@
             </nav>
         </div>
     </footer>
-
-    <!-- Popup de confirmation accessible -->
-    <div id="confirm-popup" role="dialog" aria-modal="true" aria-labelledby="confirm-title" aria-describedby="confirm-desc" tabindex="-1" class="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50 hidden">
-        <div class="bg-white rounded-xl shadow-xl p-8 max-w-md w-full outline-none" tabindex="0">
-            <h2 id="confirm-title" class="text-xl font-bold mb-4">Confirmer l'envoi</h2>
-            <p id="confirm-desc" class="mb-6">Voulez-vous vraiment envoyer ce formulaire&nbsp;?</p>
-            <div class="flex justify-end space-x-4">
-                <button id="confirm-cancel" type="button" class="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 focus:ring-2 focus:ring-green-500">Annuler (Échap)</button>
-                <button id="confirm-ok" type="button" class="px-4 py-2 rounded bg-green-700 text-white hover:bg-green-800 focus:ring-2 focus:ring-green-500">Confirmer (Entrée)</button>
-            </div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
